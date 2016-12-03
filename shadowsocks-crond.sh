@@ -23,7 +23,7 @@ shadowsocks[2]=/usr/bin/shadowsocks-server
 # shadowsocks-libev path
 shadowsocks[3]=/usr/local/bin/ss-server
 # shadowsocksR path
-shadowsocks[4]=/usr/local/shadowsocks/server.py
+shadowsocks[4]=/usr/local/shadowsocks/shadowsocks/server.py
 # default pid value
 pid=""
 
