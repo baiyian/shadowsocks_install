@@ -325,7 +325,7 @@ install(){
 # Install cleanup
 install_cleanup(){
     cd ${cur_dir}
-    rm -rf manyuser.zip shadowsocks-manyuser libsodium-1.0.11.tar.gz libsodium-1.0.11
+    rm -rf shadowsocks libsodium-1.0.11.tar.gz libsodium-1.0.11
 }
 
 
@@ -348,7 +348,7 @@ uninstall_shadowsocks(){
         rm -f /etc/shadowsocks.json
         rm -f /etc/init.d/shadowsocks
         rm -f /var/log/shadowsocks.log
-        rm -rf /usr/local/shadowsocks/shadowsocks
+        rm -rf /usr/local/shadowsocks
         echo "ShadowsocksR uninstall success!"
     else
         echo
