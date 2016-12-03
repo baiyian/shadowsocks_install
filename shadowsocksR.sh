@@ -174,10 +174,10 @@ pre_install(){
     char=`get_char`
     # Install necessary dependencies
     if check_sys packageManager yum; then
-        yum install -y unzip openssl-devel gcc swig python python-devel python-setuptools autoconf libtool libevent automake make curl curl-devel zlib-devel perl perl-devel cpio expat-devel gettext-devel
+        yum install -y git unzip openssl-devel gcc swig python python-devel python-setuptools autoconf libtool libevent automake make curl curl-devel zlib-devel perl perl-devel cpio expat-devel gettext-devel
     elif check_sys packageManager apt; then
         apt-get -y update
-        apt-get -y install python python-dev python-pip python-m2crypto curl wget unzip gcc swig automake make perl cpio build-essential
+        apt-get -y install git python python-dev python-pip python-m2crypto curl wget unzip gcc swig automake make perl cpio build-essential
     fi
     cd ${cur_dir}
 }
@@ -348,7 +348,7 @@ uninstall_shadowsocks(){
         rm -f /etc/shadowsocks.json
         rm -f /etc/init.d/shadowsocks
         rm -f /var/log/shadowsocks.log
-        rm -rf /usr/local/shadowsocks
+        rm -rf /usr/local/shadowsocks/shadowsocks
         echo "ShadowsocksR uninstall success!"
     else
         echo
