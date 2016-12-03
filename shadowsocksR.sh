@@ -190,7 +190,7 @@ download_files(){
         exit 1
     fi
     # Download ShadowsocksR file
-    if ! wget --no-check-certificate -O manyuser.zip https://github.com/breakwa11/shadowsocks/archive/manyuser.zip; then
+    if ! git clone -b manyuser https://github.com/breakwa11/shadowsocks.git; then
         echo "Failed to download ShadowsocksR file!"
         exit 1
     fi
@@ -286,9 +286,8 @@ install(){
     ldconfig
     # Install ShadowsocksR
     cd ${cur_dir}
-    unzip -q manyuser.zip
-    mv shadowsocks-manyuser/shadowsocks /usr/local/
-    if [ -f /usr/local/shadowsocks/server.py ]; then
+        mv shadowsocks /usr/local/
+    if [ -f /usr/local/shadowsocks/shadowsocks/server.py ]; then
         chmod +x /etc/init.d/shadowsocks
         if check_sys packageManager yum; then
             chkconfig --add shadowsocks
