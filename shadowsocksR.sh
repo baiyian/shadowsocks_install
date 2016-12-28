@@ -190,7 +190,7 @@ download_files(){
         exit 1
     fi
     # Download ShadowsocksR file
-    if ! git clone -b manyuser https://github.com/breakwa11/shadowsocks.git; then
+    if ! git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git; then
         echo "Failed to download ShadowsocksR file!"
         exit 1
     fi
