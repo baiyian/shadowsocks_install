@@ -286,8 +286,8 @@ install(){
     ldconfig
     # Install ShadowsocksR
     cd ${cur_dir}
-        mv shadowsocks /usr/local/
-    if [ -f /usr/local/shadowsocks/shadowsocks/server.py ]; then
+        mv shadowsocksr /usr/local/
+    if [ -f /usr/local/shadowsocksr/shadowsocks/server.py ]; then
         chmod +x /etc/init.d/shadowsocks
         if check_sys packageManager yum; then
             chkconfig --add shadowsocks
@@ -348,7 +348,7 @@ uninstall_shadowsocks(){
         rm -f /etc/shadowsocks.json
         rm -f /etc/init.d/shadowsocks
         rm -f /var/log/shadowsocks.log
-        rm -rf /usr/local/shadowsocks
+        rm -rf /usr/local/shadowsocksr
         echo "ShadowsocksR uninstall success!"
     else
         echo
