@@ -304,12 +304,6 @@ install(){
     fi
 }
 
-# Install cleanup
-install_cleanup(){
-    cd ${cur_dir}
-    rm -rf shadowsocks libsodium-1.0.11.tar.gz libsodium-1.0.11
-}
-
 
 # Uninstall ShadowsocksR
 uninstall_shadowsocks(){
