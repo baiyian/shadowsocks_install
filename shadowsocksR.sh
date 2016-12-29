@@ -300,7 +300,6 @@ install(){
         echo
     else
         echo "ShadowsocksR install failed, please Email to Teddysun <i@teddysun.com> and contact"
-        install_cleanup
         exit 1
     fi
 }
