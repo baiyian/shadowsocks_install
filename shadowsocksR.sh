@@ -345,7 +345,6 @@ install_shadowsocks(){
     if check_sys packageManager yum; then
         firewall_set
     fi
-    install_cleanup
 }
 
 # Initialization step
