@@ -199,6 +199,7 @@ download_files(){
             echo "Failed to download ShadowsocksR chkconfig file!"
             exit 1
         fi
+     fi
 }
 
 # Firewall set
