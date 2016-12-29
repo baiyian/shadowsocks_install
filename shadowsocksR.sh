@@ -174,21 +174,15 @@ pre_install(){
     char=`get_char`
     # Install necessary dependencies
     if check_sys packageManager yum; then
-        yum install -y git unzip openssl-devel gcc swig python python-devel python-setuptools autoconf libtool libevent automake make curl curl-devel zlib-devel perl perl-devel cpio expat-devel gettext-devel
+        yum install -y git python
     elif check_sys packageManager apt; then
-        apt-get -y update
-        apt-get -y install git python python-dev python-pip python-m2crypto curl wget unzip gcc swig automake make perl cpio build-essential
+        apt-get -y install git python
     fi
     cd ${cur_dir}
 }
 
 # Download files
 download_files(){
-    # Download libsodium file
-    if ! wget --no-check-certificate -O libsodium-1.0.11.tar.gz https://github.com/jedisct1/libsodium/releases/download/1.0.11/libsodium-1.0.11.tar.gz; then
-        echo "Failed to download libsodium-1.0.11.tar.gz!"
-        exit 1
-    fi
     # Download ShadowsocksR file
     if ! git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git; then
         echo "Failed to download ShadowsocksR file!"
@@ -205,7 +199,6 @@ download_files(){
             echo "Failed to download ShadowsocksR chkconfig file!"
             exit 1
         fi
-    fi
 }
 
 # Firewall set
@@ -273,17 +266,6 @@ EOF
 
 # Install ShadowsocksR
 install(){
-    # Install libsodium
-    tar zxf libsodium-1.0.11.tar.gz
-    cd libsodium-1.0.11
-    ./configure && make && make install
-    if [ $? -ne 0 ]; then
-        echo "libsodium install failed!"
-        install_cleanup
-        exit 1
-    fi
-    echo "/usr/local/lib" > /etc/ld.so.conf.d/local.conf
-    ldconfig
     # Install ShadowsocksR
     cd ${cur_dir}
         mv shadowsocksr /usr/local/
