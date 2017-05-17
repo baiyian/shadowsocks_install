@@ -252,10 +252,10 @@ config_shadowsocks(){
     "local_port": 1080,
 
     "password": "${shadowsockspwd}",
-    "method": "aes-128-ctr",
-    "protocol": "auth_aes128_md5",
+    "method": "none",
+    "protocol": "auth_chain_a",
     "protocol_param": "",
-    "obfs": "tls1.2_ticket_auth_compatible",
+    "obfs": "plain",
     "obfs_param": "",
     "speed_limit_per_con": 0,
     "speed_limit_per_user": 0,
