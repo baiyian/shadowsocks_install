@@ -253,9 +253,9 @@ config_shadowsocks(){
 
     "password": "${shadowsockspwd}",
     "method": "none",
-    "protocol": "auth_chain_a",
+    "protocol": "auth_chain_b",
     "protocol_param": "",
-    "obfs": "plain",
+    "obfs": "tls1.2_ticket_auth",
     "obfs_param": "",
     "speed_limit_per_con": 0,
     "speed_limit_per_user": 0,
