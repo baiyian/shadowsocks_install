@@ -296,8 +296,8 @@ install(){
         echo -e "Local IP: \033[41;37m 127.0.0.1 \033[0m"
         echo -e "Local Port: \033[41;37m 1080 \033[0m"
         echo -e "Encryption Method: \033[41;37m none \033[0m"
-        echo -e "Protocol: \033[41;37m auth_chain_a \033[0m"
-        echo -e "obfs: \033[41;37m plain \033[0m"
+        echo -e "Protocol: \033[41;37m auth_chain_b \033[0m"
+        echo -e "obfs: \033[41;37m tls1.2_ticket_auth \033[0m"
         echo
         echo "Welcome to visit:https://shadowsocks.be/9.html"
         echo "If you want to change protocol & obfs, please visit reference URL:"
